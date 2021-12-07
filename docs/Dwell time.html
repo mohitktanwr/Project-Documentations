@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <meta charset="UTF-8">
-    <title>Projects by mohit-kumar001</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="../stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="../stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Projects by mohit-kumar001</title>
   </head>
   <body>
-    <section class="page-header">
+    <div id="container">
+      <div class="inner">
+        <header>
       <h1 class="project-name">Dwell Time</h1>
       <h2 class="project-tagline">Dwell time is the amount of time spent at a location in a trip not covering distance between locations(SIC to SIC or SIC to customer location or vice versa) on open highway/road, where location can be a service center of XPO or a customer(shipper/consignee) location which can be due to a driver waiting for the shipper to load the goods or for a consignee to unload the goods or at a service center waiting for service center operations to be completed.</h2>
       <a href="https://github.xpo.com/mohit-kumar001/Project-Documentations" class="btn">View on GitHub</a>
-    </section>
+        </header>
     <section class="main-content">
       <h1>
 <a id="Calculation" class="anchor" href="#Calculation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Calculation</h1>
@@ -117,6 +122,7 @@ Free Time</h3>
     <h3>
       General Provisions
 </h3>
+<p>
 <ol>
   <li> Detention charges are assessed against Shipper in case of spotting/dropping for loading and against the Consignee in the case of spotting/dropping for unloading irrespective of whether charges are prepaid or collect.
 
@@ -132,27 +138,29 @@ Free Time</h3>
   </li>
   
 </ol>
+</p>
+<div>
 <h1>
   Data/Tables
-  </h1>
-  <ul>
+</h1>
+  <div>
+  <ol>
     <li>UFO_TRIP_VW 
-  
+      <ul>
+        <li>Contains trip level information like trip instance number(unique identifier), Origin SIC, Destination SIC, type of trip(City or Dispatch), trip date, tractor number along with tractor prefix text and suffix number, trip category, trip status(dispatched, returned, completed or cancelled), number of miles driven during that trip, etc.
+        </li>
+        <li>Some of the identified useful fields in the table are  TRP_INSTC_NBR,  TRP_TYP,  TRP_ORIG_SIC_CD,  TRP_DEST_SIC_CD,  TRP_ORIG_APPL_NODE_INSTC_NBR,  TRP_ORIG_NODE_TYP,  TRP_DEST_APPL_NODE_INSTC_NBR,  TRP_DEST_NODE_TYP,  TRAC_NBR,  TRAC_PFX_TXT,  TRAC_SFX_NBR,  TRP_DT,  TRP_CATG_CD,  TRP_STAT_CD,  CALC_ACTL_DRVN_MILE,  EST_DLVR_CMPLTN_DTTM_LCL,  HSS_IND,  ACTL_DISP_DTTM_LCL, ACTL_ARIV_DTTM_LCL.
+        </li>
+      </ul>
     </li>
-    <ul>
-      <li>Contains trip level information like trip instance number(unique identifier), Origin SIC, Destination SIC, type of trip(City or Dispatch), trip date, tractor number along with tractor prefix text and suffix number, trip category, trip status(dispatched, returned, completed or cancelled), number of miles driven during that trip, etc.
-      </li>
-      <li>Some of the identified useful fields in the table are  TRP_INSTC_NBR,  TRP_TYP,  TRP_ORIG_SIC_CD,  TRP_DEST_SIC_CD,  TRP_ORIG_APPL_NODE_INSTC_NBR,  TRP_ORIG_NODE_TYP,  TRP_DEST_APPL_NODE_INSTC_NBR,  TRP_DEST_NODE_TYP,  TRAC_NBR,  TRAC_PFX_TXT,  TRAC_SFX_NBR,  TRP_DT,  TRP_CATG_CD,  TRP_STAT_CD,  CALC_ACTL_DRVN_MILE,  EST_DLVR_CMPLTN_DTTM_LCL,  HSS_IND,  ACTL_DISP_DTTM_LCL, ACTL_ARIV_DTTM_LCL.
-      </li>
-    </ul>
     <li>UFO_TRIP_ACTIVITY_VW
-    </li>
     <ul>
       <li>Contains information about trip level activities which are not at node level(lunch start, lunch end or other activity start, other activity end), timestamp of activity, sequence of activities, odometer reading at activity execution, etc.
       </li>
       <li>Some of the identified useful fields in the table are TRP_INSTC_NBR, TRP_TYP, ACTVTY_TYP, ACTVTY_SEQ_NBR, ACTL_ACTVTY_DTTM_LCL, ODO_NBR.
       </li>
     </ul>
+    </li>
     <li>UFO_TRIP_NODE_VW
     </li>
     <ul>
@@ -207,7 +215,9 @@ Free Time</h3>
       </li>
       
     </ul>
-  </ul>
+  </ol>
+  </div>
+  </div>
 <h1>Previous Work
 </h1>
 <p>Below are the links for github repos and reports containing EDA over Dwell time or related accessorials,
@@ -242,7 +252,8 @@ Free Time</h3>
     
   </ul>
 </ul>
-
+</div>
+</div>
 
   </body>
 </html>
