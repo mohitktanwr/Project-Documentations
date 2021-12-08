@@ -1,0 +1,8 @@
+title: Projects
+description: A single space for Documentation of all Projects.
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-merlot
+
+gems:
+  - jekyll-mentions
