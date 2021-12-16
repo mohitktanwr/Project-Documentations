@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-us" style="scroll-behavior: smooth;">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -19,28 +19,51 @@
         <p>Dwell time is the amount of time spent at a location in a trip not covering distance between locations(SIC to SIC or SIC to customer location or vice versa) on open highway/road, where location can be a service center of XPO or a customer(shipper/consignee) location which can be due to a driver waiting for the shipper to load the goods or for a consignee to unload the goods or at a service center waiting for service center operations to be completed.</p>
 
         <p class="view"><a href="https://github.xpo.com/mohit-kumar001/Project-Documentations">View the Project on GitHub <small>mohit-kumar001/Project-Documentations</small></a></p>
-
-
+        <h1><a href="#Calculation">Calculation</a></h1>
+        <h1><a href="#Accessorials">Accessorials</a></h1>
+        <h2><a href="#Detention With Power">Detention With Power</a></h2>
+        <h3><a href="#Free time1">Free time</a></h3>
+        <h3><a href="#Charges1">Charges</a></h3>
+        <h3><a href="#General Provision1">General Provision</a></h3>
+        <h2><a href="#Detention without Power">Detention without Power</a></h2>
+        <h3><a href="#Free Time2">Free time</a></h3>
+        <h3><a href="#Charges2">Charges</a></h3>
+        <h3><a href="#General Provisions2">General Provision</a></h3>
+        <h1><a href="#data/tables">Data/Tables</a></h1>
+        <h3><a href="#UFO_TRIP_VW">UFO_TRIP_VW</a></h3>
+        <h3><a href="#UFO_TRIP_ACTIVITY_VW">UFO_TRIP_ACTIVITY_VW</a></h3>
+        <h3><a href="#UFO_TRIP_NODE_VW">UFO_TRIP_NODE_VW</a></h3>
+        <h3><a href="#UFO_TRIP_NODE_ACTVTY_VW">UFO_TRIP_NODE_ACTVTY_VW</a></h3>
+        <h3><a href="#UFO_VEH_ACTVTY_STP_MTRC_VW">UFO_VEH_ACTVTY_STP_MTRC_VW</a></h3>
+        <h3><a href="#CUSTOMER_HIERARCHY_VW">CUSTOMER_HIERARCHY_VW</a></h3>
+        <h3><a href="#NWK_NETWORK_NODE_VW">NWK_NETWORK_NODE_VW</a></h3>
+        <h3><a href="#UFO_TRIP_NODE_REFINED_STOP_TIME_AI">UFO_TRIP_NODE_REFINED_STOP_TIME_AI</a></h3>
+        <h1><a href="#Previous Work">Previous Work</a></h1>
+        <h3><a href="#OPS061 Accessorials - Detention with Power">OPS061 Accessorials - Detention with Power</a></h3>
+        <h3><a href="#DS - PND Customer Dwell Time">DS - PND Customer Dwell Time</a></h3>
+        <h3><a href="#Ltl-python-pnd-dwell-time">Ltl-python-pnd-dwell-time</a></h3>
+        
+        
       </header>
       <section>
 
 
 
     
-    <h1>
+    <h1 id="Calculation">
       <a id="Calculation" class="anchor" href="#Calculation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Calculation</h1>
       <p>Dwell time is calculated separately for pickup-delivery operations and for spotted(Spot empty-hook load/ spot load-hook empty operations) equipment. Both calculations are explained below,</p>
       <ol>
         <li>Dwell time for pickup-delivery is calculated by subtracting the Departure time of the driver from the Arrival time of the driver at a location(Shipper/Consignee/SIC).</li>
         <li>Dwell time for spotted/dropped equipment is calculated on the basis of the time spent by the equipment at the customer location(between spotting and hooking). Spotted for loading has a different method of dwell time calculation than spotted for unloading which is explained under the sub-heading of Free time under Detention without Power.</li>
       </ol>
-      <h1>
+      <h1 id="Accessorials">
       Accessorials
       </h1>
       <p>Some free time is allowed based on the weight of the shipment or in case of multiple shipments, then, on the basis of their combined weight, which is empirically calculated keeping in mind the usual operation duration of that weight category of shipments. Anything above the permissible time is charged to either the Shipper or Consignee, based on whether it was loading operation or unloading operation respectively, in the form of accessorial under the name of “Detention” which can be “With Power” or “Without Power” and is explained below,</p>
-      <h2>Detention With Power</h2>
+      <h2 id="Detention With Power">Detention With Power</h2>
       <p>Detention with Power generally applies in instances where shipment is being picked up from a Shipper or shipment is being delivered to a Consignee. Other cases can be when a power equipment is dropped/spotted at a customer location or the time taken (dwell time) right from the time driver arrived at the premises of the shipper or Consignee in hooking/picking up a spotted trailer/equipment exceeds 30 minutes.</p>
-      <h3>Free time</h3>
+      <h3 id="Free time1">Free time</h3>
       <p>Free time per vehicle per stop is as follows:</p>
       <table>
         <tr>
@@ -78,14 +101,14 @@
           <td>60</td>
         </tr>
       </table>
-      <h3>Charges</h3>
+      <h3 id="Charges1">Charges</h3>
       <p>Charges are as follows,
       </p>
       <ol>
         <li>Time taken over the Free time is charged in tranches of 15 minutes where each tranche of 15 minutes, or fraction thereof, will be charged $55.25. Minimum charge is $73.75.</li>
         <li>Amount due under Power Detention accessorial will be charged to Shipper in case of loading, and against the Consignee in the case of unloading, irrespective of whether the line haul charges are Prepaid or Collect.</li>
       </ol>
-      <h3>General Provisions</h3>
+      <h3 id="General Provision1">General Provisions</h3>
       <ol>
         <li>When a vehicle is both loaded and unloaded at a location, each of the operations of loading and unloading are treated as separate and have their own Free time and if exhausted, then, Power Detention accessorials, unless, when loading is begun before unloading is completed. Free time of loading will not begin until free time of unloading has expired.
         </li>
@@ -102,11 +125,11 @@
       </ol>
       
       
-      <h2>Detention without Power
+      <h2 id="Detention without Power">Detention without Power
       </h2>
       <p>Detention without Power applies to the instances when equipment/ Carrier’s vehicles without power units are detained or delayed at the customer location. Details of Equipment without power can be obtained from table ‘ltl-prd-datahub.ALL_DATAHUB_VIEW.UFO_TRIP_EQUIPMENT_VW’ wherein ‘EQP_TYP’ tells us what type of equipment (Dolly, Trailer, Power or Straight Truck) we’re talking about.
       </p>
-      <h3>
+      <h3 id="Free Time2">
       Free Time</h3>
       <p>Spotted/Dropped trailer is allowed 1 calendar day of free time for loading or unloading and the dwell time will be calculated till the time the customer notifies the carrier(XPO) that the loading/unloading operation has been completed and the trailer is ready to be picked up, however, starting point of calculation of time varies between loading and unloading operations which is explained below,
       </p>
@@ -119,13 +142,13 @@
         </li>
         
       </ol>
-      <h3>
+      <h3 id="Charges2">
         Charges</h3>
         <p>For each day or fraction thereof following the Free time of 1 day in case of Detention without Power, <b>$158.50</b> are charged.<br>
           If Carrier’s employee assists in loading, unloading, or checking the freight, charges pertaining to detention with power will apply.<br>
           When hooking/picking up spotted equipment from a customer location takes less than 30 minutes, right from the time driver enters the customer location to the time driver leaves the customer location(Dwell time), no additional charges are applied in addition to what may be applicable for the dwell time of spotted equipment. Else, if it takes more than 30 minutes, then charges under Detention with Power are applicable.
           </p>
-          <h3>
+          <h3 id="General Provisions2">
             General Provisions
       </h3>
       <ol>
@@ -143,11 +166,11 @@
         </li>
         
       </ol>
-      <h1>
+      <h1 id="data/tables">
         Data/Tables
         </h1>
         <ul>
-          <li>UFO_TRIP_VW 
+          <li id="UFO_TRIP_VW">UFO_TRIP_VW 
         
           </li>
           <ul>
@@ -156,7 +179,7 @@
             <li>Some of the identified useful fields in the table are  TRP_INSTC_NBR,  TRP_TYP,  TRP_ORIG_SIC_CD,  TRP_DEST_SIC_CD,  TRP_ORIG_APPL_NODE_INSTC_NBR,  TRP_ORIG_NODE_TYP,  TRP_DEST_APPL_NODE_INSTC_NBR,  TRP_DEST_NODE_TYP,  TRAC_NBR,  TRAC_PFX_TXT,  TRAC_SFX_NBR,  TRP_DT,  TRP_CATG_CD,  TRP_STAT_CD,  CALC_ACTL_DRVN_MILE,  EST_DLVR_CMPLTN_DTTM_LCL,  HSS_IND,  ACTL_DISP_DTTM_LCL, ACTL_ARIV_DTTM_LCL.
             </li>
           </ul>
-          <li>UFO_TRIP_ACTIVITY_VW
+          <li id="UFO_TRIP_ACTIVITY_VW">UFO_TRIP_ACTIVITY_VW
           </li>
           <ul>
             <li>Contains information about trip level activities which are not at node level(lunch start, lunch end or other activity start, other activity end), timestamp of activity, sequence of activities, odometer reading at activity execution, etc.
@@ -164,7 +187,7 @@
             <li>Some of the identified useful fields in the table are TRP_INSTC_NBR, TRP_TYP, ACTVTY_TYP, ACTVTY_SEQ_NBR, ACTL_ACTVTY_DTTM_LCL, ODO_NBR.
             </li>
           </ul>
-          <li>UFO_TRIP_NODE_VW
+          <li id="UFO_TRIP_NODE_VW">UFO_TRIP_NODE_VW
           </li>
           <ul>
             <li>Contains information about Nodes on the trip like sequence number of node on trip, location instance number(for SIC) or customer number(for customer location), node type(customer location, drop location, cartage agent), node sic code(sic under which node is located), driver triggered coordinates(through handheld device), role of the node(origin, destination or stop), suggested and actual execution sequence number of nodes, estimated arrival through both mapping software and ESRI API, and estimated departure time through mapping software along with actual arrival and departure times as reported by driver, delay in minutes, reason for delay in arrival or departure, estimated miles from previous and to next node, estimated Dwell time, etc.
@@ -174,7 +197,7 @@
       
             </li>
           </ul>
-          <li>UFO_TRIP_NODE_ACTVTY_VW
+          <li id="UFO_TRIP_NODE_ACTVTY_VW">UFO_TRIP_NODE_ACTVTY_VW
           </li>
           <ul>
             <li>Contains information about activities performed at Node level like node activity code, node activity sequence number, shipment instance id(can be used to get information about accessorials from accessorial_vw, amongst other things), unique identifier of route, etc.
@@ -184,7 +207,7 @@
       
             </li>
           </ul>
-          <li>UFO_VEH_ACTVTY_STP_MTRC_VW
+          <li id="UFO_VEH_ACTVTY_STP_MTRC_VW">UFO_VEH_ACTVTY_STP_MTRC_VW
           </li>
           <ul>
             <li>EOBR timestamps for arrival and departure can be extracted from this table for correction of driver triggered arrival and departure times.
@@ -192,7 +215,7 @@
             </li>
             
           </ul>
-          <li>CUSTOMER_HIERARCHY_VW
+          <li id="CUSTOMER_HIERARCHY_VW">CUSTOMER_HIERARCHY_VW
           </li>
           <ul>
             <li>For obtaining customer/parent data like customer number, mad code, name, address, city, state, zip4/6, country, type of customer, coordinates of the customer/parent.
@@ -200,7 +223,7 @@
             </li>
             
           </ul>
-          <li>NWK_NETWORK_NODE_VW
+          <li id="NWK_NETWORK_NODE_VW">NWK_NETWORK_NODE_VW
           </li>
           <ul>
             <li>Can be used to obtain information like customer number, coordinates, street address, city name, state, country, postal code about the nodes we encounter on our trips.
@@ -208,7 +231,7 @@
             </li>
             
           </ul>
-          <li>UFO_TRIP_NODE_REFINED_STOP_TIME_AI
+          <li id="UFO_TRIP_NODE_REFINED_STOP_TIME_AI">UFO_TRIP_NODE_REFINED_STOP_TIME_AI
       
           </li>
           <ul>
@@ -219,12 +242,12 @@
             
           </ul>
         </ul>
-      <h1>Previous Work
+      <h1 id="Previous Work">Previous Work
       </h1>
       <p>Below are the links for github repos and reports containing EDA over Dwell time or related accessorials,
       </p>
       <ul>
-        <li>OPS061 Accessorials - Detention with Power
+        <li id="OPS061 Accessorials - Detention with Power">OPS061 Accessorials - Detention with Power
       
         </li>
         <ul>
@@ -234,7 +257,7 @@
           </li>
           
         </ul>
-        <li>DS - PND Customer Dwell Time
+        <li id="DS - PND Customer Dwell Time">DS - PND Customer Dwell Time
           <ul>
             <li><h3><a href="https://xpologisticsdev.cloud.looker.com/folders/395" ></a>link</h3>
         
@@ -243,7 +266,7 @@
             
           </ul>
         </li>
-        <li>Ltl-python-pnd-dwell-time
+        <li id="Ltl-python-pnd-dwell-time">Ltl-python-pnd-dwell-time
         </li>
         <ul>
           <li><h3><a href="https://github.xpo.com/OneXPO/ltl-python-pnd-dwell-time/tree/master/notebooks/eda" >link</a></h3>
